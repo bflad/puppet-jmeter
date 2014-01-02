@@ -44,6 +44,7 @@ do_start()
 {
         [ -n "$JAVA_PID" ] && echo "$NAME already started" && exit 0
         echo -n "Starting $NAME: "
+        cd $JMETER_PATH
         $JMETER_PATH/bin/$NAME-server 2>&1 &
         RETVAL=$?
         MODE="normal"
